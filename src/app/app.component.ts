@@ -10,7 +10,7 @@ export class AppComponent {
 
   constructor() {
     // Web app's Firebase configuration
-    const firebaseConfig = {
+    const config = {
       apiKey: 'AIzaSyBcgveBprw9i673Tatx5e6wVQrW8P5DC8w',
       authDomain: 'masuperagence-df6f1.firebaseapp.com',
       databaseURL: 'https://masuperagence-df6f1.firebaseio.com',
@@ -20,7 +20,7 @@ export class AppComponent {
       appId: '1:653667171783:web:ad46bf2dc54c8cc5'
     };
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(config);
 
   }
 }
