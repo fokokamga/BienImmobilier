@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-admin-signin',
@@ -11,5 +12,10 @@ export class AdminSigninComponent implements OnInit {
 
   ngOnInit() {
   }
+ onAuth(form: NgForm) {
+   const email = form.value.email;
+   const password = form.value.password;
 
+   console.log(email + ' ' + password);
+ }
 }
