@@ -29,7 +29,16 @@ export class PropertiesService {
   }
 
   removeProperty(property: Property) {
-
+    const index = this.properties.findIndex(
+      (propertyE1) => {
+        if (propertyE1 === property) {
+          return true;
+        }
+      }
+    );
+    this.properties.splice(index, 1);
+    this.saveProperties();
+    this.emitProperties();
   }
 
   getProperties() {
@@ -37,6 +46,10 @@ export class PropertiesService {
       this.properties = data.val() ? data.val() : [];
       this.emitProperties();
     });
+  }
+
+  updateProperty(property: Property, id: number) {
+firebase.database().ref('/properties/' + id).update(property);
   }
 }
 
